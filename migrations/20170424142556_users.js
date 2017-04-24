@@ -4,6 +4,7 @@ exports.up = function(knex, Promise) {
     t.increments('id');
     t.string('name').notNullable();
     t.string('password').notNullable();
+    t.boolean('logged_in').defaultTo(false);
   })
 };
 

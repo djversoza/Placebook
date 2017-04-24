@@ -45,7 +45,6 @@ router.post('/register', (req, res, next) =>{
                             password: hash
                             })
                             .then(function(){
-                              res.cookie('loggedIn', true)
                               res.redirect('/')
                             });
     });
