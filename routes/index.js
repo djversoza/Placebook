@@ -19,7 +19,10 @@ router.post('/', function(req, res, next) {
                    bcrypt.compare(req.body.password, user[0].password, function(err, result){
                      if(result) {
                      res.cookie('loggedIn', 'true')
-                     res.redirect('/')
+                     knex.raw('update users set logged_in = ? where name = ?', [req.cookies.loggedIn, req.body.usrName]).then(() =>{
+                       res.redirect('/')
+                     })
+
                    } else {
                      res.render('register')
                    }
