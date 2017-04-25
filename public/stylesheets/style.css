@@ -126,7 +126,6 @@ p {
   clear: both;
   position: relative;
   background: linear-gradient(to bottom right, rgb(18, 27, 43), rgb(32, 52, 86), rgb(61, 89, 140));
-
   margin-top: 380px;
   height: 500px;
 }
@@ -148,4 +147,16 @@ p {
 #descmid{
   margin-left: 43px;
   margin-right: 43px;
+}
+/*Register styles*/
+
+#rdy {
+  margin-right: 7px;
+  color: white;
+  font-family: Tahoma, Geneva, sans-serif;
+  text-shadow: 2px 2px 5px black;
+}
+
+.regg {
+ padding: 10px;
 }
