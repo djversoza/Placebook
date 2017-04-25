@@ -12,23 +12,20 @@ router.get(`/create`,function(req,res,next){
   })
 })
 
-//--Confirmation page
-// router.get(`/create/createcon`,function(req,res,next){
-//   knex.raw(`SELECT users.id as userid, posts.id as postid, users.name, users.password, users.logged_in, posts.content FROM users JOIN posts ON users.id = posts.poster_id`).then(function(data){
-//     res.render('create/confirmationpost',{
-//       data: data.rows,
-//       content: `${req.body.content}`
-//     })
-//   })
-// })
-
 //-2 POST
 router.post('/:id',function(req,res,next){
-  console.log(`${req.body.content}`);
+
   knex.raw(`INSERT into posts VALUES (DEFAULT,${req.params.id},'${req.body.content}')`).then(function(){
-    res.redirect('/createpost/create')
+    res.render('create/confirmpost',{
+      id: `${req.params.id}`,
+      content: `${req.body.content}`
+    })
   })
 })
+
+//GET latest POST
+
+
 
 //UPDATE ACCOUNT
 //-1 GET
