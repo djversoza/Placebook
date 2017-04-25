@@ -18,9 +18,11 @@ router.post('/', function(req, res, next) {
                  if(user[0]) {
                    bcrypt.compare(req.body.password, user[0].password, function(err, result){
                      if(result) {
-                     res.cookie('loggedIn', 'true')
-                     knex.raw('update users set logged_in = ? where name = ?', [req.cookies.loggedIn, req.body.usrName]).then(() =>{
-                       res.redirect('/')
+                       res.cookie("loggedin", true);
+                       console.log(req.cookies.loggedin)
+                       knex.raw('update users set logged_in = ? where name = ?;', [true, req.body.usrName]).then(() =>{
+                       console.log("hi")
+                       res.redirect('/createpost')
                      })
 
                    } else {
