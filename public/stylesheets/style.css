@@ -26,14 +26,36 @@ body {
 a {
   color: #00B7FF;
 }
+
 h1 {
+  font-family: Tahoma, Geneva, sans-serif;
+  color: white;
+  text-shadow: 2px 2px 5px black;
+}
+
+p {
   font-family: Tahoma, Geneva, sans-serif;
   color: white;
 }
 
+#log {
+  background-color: white;
+  color:grey;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+#log:hover{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  text-align: center;
+}
+
 .login {
   width: 100%;
-  background-color: MidnightBlue;
+  background: linear-gradient(to bottom right, rgb(18, 27, 43), rgb(32, 52, 86));
   height:100px;
   box-shadow: 0px 20px 20px 10px rgba(0, 0, 0, 0.8);
 }
@@ -41,6 +63,7 @@ h1 {
 
 .title{
   margin-top: 0;
+  margin-left: 10px;
   animation-duration: 2s;
   animation-name: fade-in-bck;
   font-family: Tahoma, Geneva, sans-serif;
@@ -50,26 +73,50 @@ h1 {
   color: white;
 }
 
+.accT{
+  font-size: 40px;
+  font-family: Tahoma, Geneva, sans-serif;
+  text-shadow: 7px 15px 10px rgba(0, 0, 0, 0.8);
+  color: white;
+}
+
+.reg{
+  border-style: none;
+  border-radius: 50px;
+  background-color: white;
+  color:grey;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  box-shadow: 6px 8px 10px rgba(0, 0, 0, 0.5);
+  font-size: 18px;
+}
+
+.reg:hover{
+  padding-top: 27px;
+  padding-bottom: 27px;
+  padding-left: 45px;
+  padding-right: 45px;
+  text-align: center;
+  font-size: 28px;
+}
+
 .forma{
   float: right;
   margin-right: 8px;
 }
 
 .newnew {
+  padding: 5px;
+  border-style: none;
+  border-radius: 50px;
   box-shadow: 2px 8px 20px 3px rgba(0, 0, 0, 0.6)
 }
 
 
-.regdiv{
-  position: relative;
-  margin-top: 50px;
-  display: block;
-  text-align: center;
-  width: 20%;
-  margin:0 auto;
-
-}
 .innerDiv{
+  text-align: center;
   width: 100%;
   position: absolute;
   top: 150px;
@@ -78,13 +125,14 @@ h1 {
 .foot{
   clear: both;
   position: relative;
-  background-color: MidnightBlue;
+  background: linear-gradient(to bottom right, rgb(18, 27, 43), rgb(32, 52, 86), rgb(61, 89, 140));
 
   margin-top: 380px;
   height: 500px;
 }
 
 .desc{
+  margin-top: 20px;
   text-align: center;
   width: 25%;
   display: inline-block;
