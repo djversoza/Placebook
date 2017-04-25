@@ -13,12 +13,11 @@ router.get(`/`,function(req,res,next){
 });
 
 //Logout route - DJ
-router.get('/logout', (req, res, next) =>{
+router.get('/logout', (req, res, next) => {
   res.clearCookie('loggedin');
   knex.raw('UPDATE users SET logged_in = false where logged_in = true').then(()=>{
     res.redirect('/')
   });
 });
-
 
 module.exports = router;

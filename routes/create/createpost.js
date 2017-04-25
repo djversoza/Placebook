@@ -23,9 +23,6 @@ router.post('/:id',function(req,res,next){
   })
 })
 
-//GET latest POST
-
-
 
 //UPDATE ACCOUNT
 //-1 GET
