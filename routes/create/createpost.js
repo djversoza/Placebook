@@ -4,7 +4,11 @@ var knex = require('../../db/knex');
 
 //POST
 router.get(`/`,function(req,res,next){
-  res.render('create/post')
+  knex.raw(`SELECT users.id as userid, posts.id as postid, users.name, users.password, users.logged_in, posts.content FROM users JOIN posts ON users.id = posts.id`).then(function(data){
+    res.render('create/post',{
+      data: data
+    })
+  })
 })
 
 
