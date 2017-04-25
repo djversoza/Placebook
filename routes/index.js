@@ -29,7 +29,7 @@ router.post('/', function(req, res, next) {
                    } else {
                      res.render('register')
                    }
-                 });
+                 }); 
                  } else {
                    res.render('register')
                  }
