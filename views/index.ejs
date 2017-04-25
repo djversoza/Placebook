@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <title>Placebook home</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <h1>Placebook</h1>
+    <form method="post">
+      <input class="newnew" type="text" name="usrName" placeholder="username"></input>
+      <input class="newnew" type="text" name="password" placeholder="password"></input>
+      <input class="newnew" type="submit" name="submit"></input>
+    </form>
+    <a href="register" style="display: inline;"><button>Register</button></a>
   </body>
 </html>
