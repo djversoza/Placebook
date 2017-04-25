@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>I'm at edit page!</h1>
+
+    <form action="/createpost/updateacc/<%= data.id %>" method="post">
+
+      <h2>Your post# is <%= data.id %></h2>
+
+      <label for="">User name</label>
+      <input type="text" name="name" value="<%= data.name %>">
+
+      <label for="">Password</label>
+      <input type="text" name="password" value="<%= data.password %>">
+
+      <input type="submit" name="submit">
+
+    </form>
+
+
+
+  </body>
+</html>

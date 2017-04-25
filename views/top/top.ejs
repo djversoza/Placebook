@@ -1,25 +1,27 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <title></title>
     <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Your recent <%= title %></p>
+
+    <p>Your recent location posts </p>
 
    <ul>
-        <% for (var i=0; i< data.length; i++) {%>
-          <li><%= data[i].post_id %> <%= data[i].content %>
-         </li>
-          <% } %>
+
+      <% for (var i=0; i< data.length; i++) {%>
+   <li><%= data[i].content %></li>
+   <% } %>
+
       </ul>
-   
-<p>
-<a href="posts/new">
+
+
+
+<a href="top/top">
           <button type="button" name="button">new post</button>
       </a>
-   </p>
+
 
   </body>
 </html>
