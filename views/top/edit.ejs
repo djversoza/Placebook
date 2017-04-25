@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!--THIS CODE WORKS-->
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title<%= posts.id%></title>
+   </head>
+   <body>
+
+      <form action= "/<%= posts.id%>/" method="post">
+
+<!-- p tag codes below pull info from db to populate fiels on edit page-->
+         <p>
+            <label for = "content">First Name</label>
+            <input type  = "text" id="content" name= "content"
+            value "<%= posts.content %>">
+         </p>
+
+         <input type="hidden" name="id" value="<%= posts.id%>">
+         <input type="submit" name="submit" value="Submit Changes">
+
+      </form>
+
+   </body>
+</html>

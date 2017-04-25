@@ -5,20 +5,22 @@ var knex = require('../../db/knex');
 //GET ALL POSTS
 router.get(`/`,function(req,res,next){
    knex.raw(`SELECT *
-       FROM posts JOIN users ON logged_in = true`)
+       FROM posts JOIN users ON users.id = posts.poster_id where users.logged_in = true`)
    .then (function(data){
    res.render('top/top', {
-         data: data.rows
-      });
-   });
-});
+         data: data.rows  })
 
-//Logout route - DJ
-router.get('/logout', (req, res, next) =>{
-  res.clearCookie('loggedin');
-  knex.raw('UPDATE users SET logged_in = false where logged_in = true').then(()=>{
-    res.redirect('/')
-  });
+})
+});
+// post for edit option
+
+/* GET one. */
+router.get('/:id/edit', function(req, res, next) {
+   knex.raw(`SELECT * from posts WHERE id =
+   '${req.params.id}'`)
+   .then (function(data){
+      res.render('posts/edit', {posts: data.rows[0]});
+   });
 });
 
 
