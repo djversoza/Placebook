@@ -22,13 +22,13 @@ router.post('/', function(req, res, next) {
                        console.log(req.cookies.loggedin)
                        knex.raw('update users set logged_in = ? where name = ?;', [true, req.body.usrName]).then(() =>{
                        console.log("hi")
-                       res.redirect('/createpost')
+                       res.redirect('/top')
                      })
 
                    } else {
                      res.render('register')
                    }
-                 }); 
+                 });
                  } else {
                    res.render('register')
                  }
