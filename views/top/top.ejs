@@ -10,16 +10,26 @@
 
     <table border='1' class='blah' id='kit'>
 
-  <tr>
+
      <% for (var i=0; i< data.length; i++) {%>
+         <tr>
         <td><%= data[i].content %>
+           <%console.log(data[i].id)%>
+
+           <a href = "/top/<%= data[i].id %>/edit">
            <button type="button" name="button" id="edit">Edit Post</button>
+        </a>
            <button type="button" name="button" id="delete">Delete Post</button>
+           <% } %>
         </td>
+
      </tr>
 
-           <% } %>
+
+
      </table>
+
+
 
      <p>
         <a href="createpost/create" style="text-decoration: none">
@@ -33,6 +43,3 @@
 </p>
    </body>
  </html>
-
-
-   
