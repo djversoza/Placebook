@@ -25,7 +25,7 @@ router.get('/:id/edit', function(req, res, next) {
 });   
 
 //Logout route - DJ
-router.get('/logout', (req, res, next) =>{
+router.get('/logout', (req, res, next) => {
   res.clearCookie('loggedin');
   res.clearCookie('id');
   knex.raw('UPDATE users SET logged_in = false where logged_in = true').then(()=>{
@@ -33,6 +33,5 @@ router.get('/logout', (req, res, next) =>{
   });
 
 });
-
 
 module.exports = router;
