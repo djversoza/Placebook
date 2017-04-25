@@ -4,7 +4,8 @@ var knex = require('../../db/knex');
 
 //GET ALL POSTS
 router.get(`/`,function(req,res,next){
-   knex.raw(`SELECT * from posts  `)
+   knex.raw(`SELECT *
+       FROM posts JOIN users ON logged_in = true`)
    .then (function(data){
    res.render('top/top', {
          data: data.rows
