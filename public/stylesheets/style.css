@@ -160,3 +160,7 @@ p {
 .regg {
  padding: 10px;
 }
+
+.regg:nth-child(-n+2) {
+  width: 13%;
+}
