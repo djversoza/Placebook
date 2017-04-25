@@ -5,7 +5,7 @@
     <title></title>
   </head>
   <body>
-    <h1>I'm at edit page!</h1>
+    <h1>I'm at account edit page!</h1>
 
     <form action="/createpost/updateacc/post/<%= data.id %>" method="post">
 
@@ -20,6 +20,8 @@
       <input type="submit" name="submit">
 
     </form>
+
+    <a href="/createpost/updateacc/delete"><button type="button" name="button">Delete account</button></a>
 
   </body>
 </html>
