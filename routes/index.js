@@ -19,6 +19,7 @@ router.post('/', function(req, res, next) {
                  if(user[0]) {
                    bcrypt.compare(req.body.password, user[0].password, function(err, result){
                      if(result) {
+                       res.cookie("id", user[0].id)
                        res.cookie("loggedin", true);
                        console.log(req.cookies.loggedin)
                        knex.raw('update users set logged_in = ? where name = ?;', [true, req.body.usrName]).then(() =>{
@@ -27,11 +28,11 @@ router.post('/', function(req, res, next) {
                      })
 
                    } else {
-                     res.render('register')
+                     res.redirect('/')
                    }
                  });
                  } else {
-                   res.render('register')
+                   res.redirect('/')
                  }
 
                })
