@@ -5,7 +5,7 @@ var knex = require('../../db/knex');
 //NEW POST
 //-1 GET
 router.get(`/create`,function(req,res,next){
-  knex.raw(`SELECT users.id FROM users WHERE users.id =${req.cookies.id} and users.logged_in='true'`).then(function(data){
+  knex.raw(`SELECT users.* FROM users WHERE users.id =${req.cookies.id} `).then(function(data){
     res.render('create/post',{
       data: data.rows[0]
     })
@@ -26,8 +26,8 @@ router.post('/:id',function(req,res,next){
 
 //UPDATE ACCOUNT
 //-1 GET
-router.get(`/updateacc/:id`,function(req,res,next){
-  knex.raw(`SELECT * FROM users WHERE logged_in='true'`).then(function(data){
+router.get(`/updateacc/`,function(req,res,next){
+  knex.raw(`SELECT * FROM users WHERE users.id =${req.cookies.id}`).then(function(data){
     res.render('create/edit',{
       data: data.rows[0]
     })
