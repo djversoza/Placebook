@@ -1,5 +1,8 @@
 body {
+  margin: 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url(https://c2.staticflickr.com/2/1627/24177133685_d9a9608968_k.jpg);
+  overflow: hidden;
 }
 
 a {
@@ -8,17 +11,54 @@ a {
 
 .login {
   width: 100%;
+  background-color: blue;
+  height:100px;
 }
 
-.cool {
-  float: right;
-  margin-left:auto;
-  margin-right:20px;
+.title{
+  margin-top: 0;
 }
+
+.forma{
+  float: right;
+  margin-right: 8px;
+}
+
 
 .regdiv{
+  position: relative;
+  margin-top: 50px;
   display: block;
   text-align: center;
   width: 20%;
   margin:0 auto;
+
+}
+.innerDiv{
+  width: 100%;
+  position: absolute;
+  top: 150px;
+}
+
+.foot{
+  clear: both;
+  position: relative;
+  background-color: blue;
+  margin-top: 380px;
+  height: 500px;
+}
+
+.desc{
+  text-align: center;
+  width: 25%;
+  display: inline-block;
+}
+
+.footbox{
+  text-align: center;
+}
+
+#descmid{
+  margin-left: 30px;
+  margin-right: 30px;
 }

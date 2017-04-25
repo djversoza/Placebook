@@ -7,14 +7,9 @@
   <body>
 
 
-    <form action="/createpost" method="post">
+    <form action="/createpost/<%= data.userid %>" method="post">
 
-      <label for="name">User id</label>
-      <p><select name="userid">
-          <% for(var i=0;i<data.length;i++) { %>
-                <option><%= data[i].userid %></option>
-              <% } %>
-      </select></p>
+      <p><label for="userid">Your user id is <%= data.userid %></label></p>
 
       <label for="content">Content</label>
       <input type="text" name="content">
