@@ -5,11 +5,57 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1>Register new user</h1>
-    <form method="post">
-      <input type="text" name="usrName" placeholder="username"></input>
-      <input type="text" name="password" placeholder="password"></input>
-      <input type="submit" name="submit"></input>
-    </form>
+
+    <div class="login">
+      <h1 class="title">Placebook</h1>
+      <form class = "forma" method="post" action="/">
+        <h3 id="rdy" style="display: inline;">Already a user?</h3>
+          <input class="newnew" type="text" name="usrName" placeholder="username"></input>
+          <input class="newnew" type="text" name="password" placeholder="password"></input>
+          <input id="log" class="newnew" type="submit" name="submit" value="Login"></input>
+      </form>
+    </div>
+
+    <div class="regdiv">
+      <div class="innerDiv">
+        <div class="regin">
+          <h1>Register new user</h1>
+          <form method="post">
+            <input class="newnew regg" type="text" name="usrName" placeholder="username"></input>
+            <input class="newnew regg" type="text" name="password" placeholder="password"></input>
+            <input id="log" class="newnew regg" type="submit" name="submit"></input>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="foot">
+      <footer>
+        <div class="footbox">
+          <div class="bottom">
+
+            <div class="desc">
+              <h1>Anywhere</h1>
+              <p>
+              Placebook lets you create dates, meetings, gatherings or whatever event comes to your mind and share them with friends. ANYWHERE!
+              </p>
+            </div>
+
+            <div class="desc" id="descmid">
+              <h1>Anytime</h1>
+              <p>
+              No patience? No problem. Placebook lets you post whenever you want, so your meetings will always be up to date.
+              </p>
+            </div>
+
+            <div class="desc">
+              <h1>Anyone</h1>
+              <p>
+                With Placebooks emphasis on security, you can comfortably share your posts with the people that YOU want.
+              </p>
+            </div>
+        </div>
+
+        </div>
+      </footer>
   </body>
 </html>
