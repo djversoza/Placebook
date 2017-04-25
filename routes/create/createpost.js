@@ -5,7 +5,7 @@ var knex = require('../../db/knex');
 //NEW POST
 //-1 GET
 router.get(`/create`,function(req,res,next){
-  knex.raw(`SELECT users.id as userid, posts.id as postid, users.name, users.password, users.logged_in, posts.content FROM users JOIN posts ON users.id = posts.poster_id WHERE users.logged_in='true'`).then(function(data){
+  knex.raw(`SELECT users.id FROM users WHERE users.id =${req.cookies.id} and users.logged_in='true'`).then(function(data){
     res.render('create/post',{
       data: data.rows[0]
     })
