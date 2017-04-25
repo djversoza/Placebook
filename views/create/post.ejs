@@ -5,19 +5,21 @@
     <title></title>
   </head>
   <body>
-    <form action="index.html" method="post">
 
-      <label for="">Post Id</label>
-      <input type="text" name="" value="">
 
-      <label for="">User Id</label>
-      <input type="text" name="" value="">
+    <form action="/createpost" method="post">
 
-      <label for="">User name</label>
-      <input type="text" name="" value="">
+      <label for="name">User id</label>
+      <p><select name="userid">
+          <% for(var i=0;i<data.length;i++) { %>
+                <option><%= data[i].userid %></option>
+              <% } %>
+      </select></p>
 
-      <label for="">Content</label>
-      <input type="text" name="">
+      <label for="content">Content</label>
+      <input type="text" name="content">
+
+      <input type="submit" name="submit" value="New Post">
 
     </form>
   </body>
