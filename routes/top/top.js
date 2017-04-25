@@ -14,6 +14,7 @@ router.get(`/`,function(req,res,next){
 });
 // post for edit option
 
+
 /* GET one. */
 router.get('/:id/edit', function(req, res, next) {
    knex.raw(`SELECT * from posts WHERE id =
@@ -21,6 +22,16 @@ router.get('/:id/edit', function(req, res, next) {
    .then (function(data){
       res.render('posts/edit', {posts: data.rows[0]});
    });
+});   
+
+//Logout route - DJ
+router.get('/logout', (req, res, next) =>{
+  res.clearCookie('loggedin');
+  res.clearCookie('id');
+  knex.raw('UPDATE users SET logged_in = false where logged_in = true').then(()=>{
+    res.redirect('/')
+  });
+
 });
 
 
