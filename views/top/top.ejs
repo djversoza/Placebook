@@ -8,24 +8,31 @@
 
     <p>Your recent location posts </p>
 
-   <ul>
+    <table border='1' class='blah' id='kit'>
 
-      <% for (var i=0; i< data.length; i++) {%>
-   <li><%= data[i].content %></li>
-   <% } %>
+  <tr>
+     <% for (var i=0; i< data.length; i++) {%>
+        <td><%= data[i].content %>
+           <button type="button" name="button" id="edit">Edit Post</button>
+           <button type="button" name="button" id="delete">Delete Post</button>
+        </td>
+     </tr>
 
-    </ul>
+           <% } %>
+     </table>
+
+     <p>
+        <a href="createpost/create" style="text-decoration: none">
+          <button type="button" name="button">new post</button>
+        </a>
+
+        <a href="top/logout">
+         <button style="margin-left:10px;" type="button" name="button">logout</button>
+       </a>
+
+</p>
+   </body>
+ </html>
 
 
-
-    <a href="top/top" style="text-decoration: none">
-      <button type="button" name="button">new post</button>
-    </a>
-
-    <a href="top/logout">
-      <button style="margin-left:10px;" type="button" name="button">logout</button>
-    </a>
-
-
-  </body>
-</html>
+   
