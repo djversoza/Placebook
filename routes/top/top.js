@@ -26,6 +26,16 @@ router.get('/:id/edit', function(req, res, next) {
 });
 
 
+// update one
+router.post('/:id/edit', function(req, res, next) {
+   knex.raw(`UPDATE posts SET content = '${req.body.content}' where id =
+   ${req.params.id}`)
+   .then (function(data){
+      console.log(req.body.content)
+      res.redirect('/top');
+   });
+});
+
 //-POST ONE
 router.post('/:id',function(req,res,next){
   console.log(`${req.body.content}`);
@@ -34,8 +44,19 @@ router.post('/:id',function(req,res,next){
   })
 })
 
+//DELETE ONE
+router.get('/:id/delete',function(req,res,next){
+   knex.raw(`DELETE FROM posts WHERE id =
+   ${req.params.id}`)
+   .then (function(data){
+      console.log(req.body.content)
+      res.redirect('/top');
+   });
+   });
 
-//-2 POST
+
+
+
 
 
 //UPDATE ACCOUNT
@@ -63,14 +84,5 @@ router.get('/logout', (req, res, next) => {
   });
 
 });
-
-module.exports = router;
-
-
-
-
-
-
-
 
 module.exports = router;
