@@ -41,4 +41,12 @@ router.post('/updateacc/post/:id',function(req,res,next){
   })
 })
 
+//DELETE ACCOUNT
+router.get('/updateacc/delete',function(req,res,next){
+  knex.raw(`DELETE FROM users WHERE id=${req.cookies.id}`).then(function(){
+    res.redirect('/')
+  })
+})
+
+
 module.exports = router;
