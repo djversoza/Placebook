@@ -8,7 +8,7 @@ exports.seed = function(knex, Promise) {
     .then(function () {
       // Inserts seed entries
       return knex('posts').insert([
-        {id: 1, poster_id: 1, content: 'blah'}
+        {id: 1, poster_id: 1, content: 'blah', post_pass: 'test'}
       ]);
     });
 };
