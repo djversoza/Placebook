@@ -16,15 +16,15 @@ router.get(`/`,function(req,res,next){
 
 
 /* GET one. */
-router.get('/:id/views', (req, res, next) => {
+router.get('/:id/views', (req, res, next) =>{
    knex.raw(`SELECT * from posts WHERE id = '${req.params.id}'`)
    .then ((data) =>{
-      res.render('top/view', {data: data.rows, login: req.cookies.loggedin, visitor: req.cookies.visitor});
+      res.render('top/view', {data: data.rows, id: req.cookies.id, visitor: req.cookies.visitor});
    });
 });
 
 router.post('/:id/views', (req, res, next) =>{
-   knex.raw(`SELECT * from posts WHERE id = '${req.params.id}'`).then((data)=>{
+   knex.raw(`SELECT * from posts WHERE id = '${req.params.id}'`).then((data) =>{
      if (req.body.password === data.rows[0].post_pass) {
       res.cookie("visitor", data.rows[0].id);
       res.redirect(`/top/${req.params.id}/views`)
