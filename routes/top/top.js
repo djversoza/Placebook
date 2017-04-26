@@ -45,7 +45,7 @@ router.get('/:id/edit', function(req, res, next) {
 
 // update one
 router.post('/:id/edit', function(req, res, next) {
-   knex.raw(`UPDATE posts SET content = '${req.body.content}', post_pass = '${req.body.password}' where id =
+   knex.raw(`UPDATE posts SET content = '${req.body.content}', post_pass = '${req.body.password}', location = '${req.body.location}' where id =
    ${req.params.id}`)
    .then (function(data){
       //console.log(req.body.content)
