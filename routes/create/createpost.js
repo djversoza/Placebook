@@ -23,7 +23,6 @@ router.post('/:id',function(req,res,next){
   })
 })
 
-
 //UPDATE ACCOUNT
 //-1 GET
 router.get(`/updateacc/`,function(req,res,next){
@@ -47,6 +46,5 @@ router.get('/updateacc/delete',function(req,res,next){
     res.redirect('/')
   })
 })
-
 
 module.exports = router;
