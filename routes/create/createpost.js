@@ -13,15 +13,25 @@ router.get(`/create`,function(req,res,next){
 })
 
 //-2 POST
-router.post('/:id',function(req,res,next){
-
-  knex.raw(`INSERT into posts VALUES (DEFAULT,${req.params.id},'${req.body.content}')`).then(function(){
+router.post('/:userid',function(req,res,next){
+  knex.raw(`INSERT into posts VALUES (DEFAULT,${req.params.userid},'${req.body.content}')`).then(function(data){
     res.render('create/confirmpost',{
-      id: `${req.params.id}`,
+      id: `${req.params.userid}`,
       content: `${req.body.content}`
     })
   })
 })
+
+// router.post('/:userid',function(req,res,next){
+//   knex.raw(`INSERT into posts VALUES (DEFAULT,${req.params.userid},'${req.body.content}')`).then(function(data){
+//     res.render('create/confirmpost',{
+//       id: `${req.params.userid}`,
+//       content: `${req.body.content}`
+//     })
+//   })
+// })
+
+
 
 //UPDATE ACCOUNT
 //-1 GET
@@ -46,5 +56,8 @@ router.get('/updateacc/delete',function(req,res,next){
     res.redirect('/')
   })
 })
+
+
+
 
 module.exports = router;
