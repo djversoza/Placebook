@@ -2,10 +2,10 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Yo</title>
   </head>
   <body>
-    <%if(login || visitor){%>
+    <%if(login || parseInt(visitor) === data[0].id){%>
     <h1>I'm at confirm post!</h1>
 
     <h1><%=data[0].content%></h1>
