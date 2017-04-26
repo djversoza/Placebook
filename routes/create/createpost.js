@@ -14,8 +14,7 @@ router.get(`/create`,function(req,res,next){
 
 //-2 POST
 router.post('/:id',function(req,res,next){
-  console.log(req.body.location)
-  knex.raw(`INSERT into posts VALUES (DEFAULT,${req.params.id},'${req.body.content}', '${req.body.location}', '${req.body.password}')`).then(function(){
+  knex.raw(`INSERT into posts VALUES (DEFAULT,${req.params.id},'${req.body.content}', '${req.body.location}', '${req.body.password}', '${req.body.date[0]+"/"+req.body.date[1]+"/"+req.body.date[2]}')`).then(function(){
     res.render('create/confirmpost',{
       id: `${req.params.id}`,
       content: `${req.body.content}`,
