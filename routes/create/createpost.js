@@ -55,7 +55,7 @@ router.get(`/updateacc/`,function(req,res,next){
 //-2 POST
 router.post('/updateacc/post/:id',function(req,res,next){
   knex.raw(`UPDATE users SET name='${req.body.name}', password='${req.body.password}' WHERE id=${req.params.id}`).then(function(){
-    res.redirect('/createpost/create')
+    res.redirect('/top')
   })
 })
 
