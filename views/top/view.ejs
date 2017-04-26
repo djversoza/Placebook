@@ -11,7 +11,7 @@
     <h1><%=data[0].content%></h1>
     <%}%>
 
-    <%if (!login && !visitor){%>
+    <%if (!login && (!visitor || parseInt(visitor) != data[0].id)){%>
     <form method="post">
       <input type="text" name="password" placeholder="password" />
       <input type="submit" name="submit" value="Enter" />
