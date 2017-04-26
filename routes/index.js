@@ -6,7 +6,12 @@ const saltRounds = 10;
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.clearCookie("loggedin");
+  res.clearCookie("id");
+  knex.raw("UPDATE users SET logged_in = false").then(()=>{
+    res.render('index');
+  })
+
 });
 
 //login to Placebook
