@@ -5,28 +5,38 @@
     <link rel="stylesheet" href="/stylesheets/topstyle.css" />
   </head>
   <body>
+  <div class="login">
+    <h1 class="title">Placebook</h1>
+</div>
+<div>
+<p><a href="/createpost/updateacc"><button type="button" name="button">Edit account</button></a></p>
 
-    <p>Your recent location posts </p><a href="/createpost/updateacc"><button type="button" name="button">Edit account</button></a>
 
-    <table border='1' class='blah' id='kit'>
+</div>
+
+<div class = "contentarea">
+
+
+   Your recent location posts
+    <table class='blah' id='kit'>
 
 
      <% for (var i=0; i< data.length; i++) {%>
          <tr>
-        <td><%= data[i].content %>
+        <td>
+           <a href = "/top/<%= data[i].id %>/edit">
+             <button type="button" name="button" id="edit">Edit</button>
+           </a>
+
+           <a href = "/top/<%= data[i].id %>/views">
+             <button type="button" name="button" id="edit">View</button>
+           </a>
+
+           <a href = "/top/<%= data[i].id %>/delete">
+             <button type="button" name="button" id="delete">Delete</button>
+           </a>
+           <%= data[i].content %>
            <%console.log(data[i].id)%>
-
-        <a href = "/top/<%= data[i].id %>/edit">
-          <button type="button" name="button" id="edit">Edit Post</button>
-        </a>
-
-        <a href = "/top/<%= data[i].id %>/views">
-          <button type="button" name="button" id="edit">View Post</button>
-        </a>
-
-        <a href = "/top/<%= data[i].id %>/delete">
-           <button type="button" name="button" id="delete">Delete Post</button>
-        </a>
            <% } %>
         </td>
 
@@ -34,19 +44,33 @@
 
 
 
-     </table>
+  </table>
+</div>
 
 
-
-     <p>
-        <a href="createpost/create" style="text-decoration: none">
+     <p><a href="createpost/create" style="margin-left: 10px">
           <button type="button" name="button">new post</button>
         </a>
-
-        <a href="top/logout">
-         <button style="margin-left:10px;" type="button" name="button">logout</button>
+        <a href="top/logout" style="margin-left:15px;">
+        <button type="button" name="button">logout</button>
        </a>
 
      </p>
    </body>
  </html>
+
+
+
+
+
+
+
+    </div>
+   </div>
+</div>
+</div>
+
+    </div>
+   </footer>
+</body>
+</html>

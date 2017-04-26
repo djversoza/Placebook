@@ -2,10 +2,20 @@
 <!--THIS CODE WORKS-->
 <html>
    <head>
+          <link rel="stylesheet" href="/stylesheets/topstyle.css" />
       <meta charset="utf-8">
       <title>hi</title>
    </head>
    <body>
+
+      <div class="login">
+        <h1 class="title">Placebook</h1>
+     </div>
+
+
+
+<div class="contentarea">
+
    <style>
        /* Always set the map height explicitly to define the size of the div
         * element that contains the map. */
@@ -58,6 +68,7 @@
        Place ID <span id="place-id"></span><br>
        <span id="place-address"></span>
      </div>
+
       <form action= "edit" method="post">
         <input id="pac-input" class="controls" type="text"
         placeholder="Enter a location" value="<%=posts.location%>">
@@ -66,12 +77,21 @@
          <p>
             <label for = "content">Posts</label>
             <input type  = "text" id="content" name= "content" placeholder = "content">
+
             <input type  = "text" id="password" name= "password" placeholder = "password">
+
+         </p>
+
+
             <input id=""class="locator" type="text" name="location" hidden>
          </p>
 
          <input class="submitter" type="submit" name="submit" value="Submit Changes">
 
+           <button type="button" name="button">Submit Changes</button>
+
+
+         </p>
       </form>
       <a href="/top"><button type="button" name="button">Home page</button></a>
 
