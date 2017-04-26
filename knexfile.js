@@ -5,6 +5,10 @@ module.exports = {
   development: {
     client: 'pg',
     connection: 'postgres://localhost/placebook'
+  },
+  production: {
+    client: 'pg',
+    connection: process.env.DATABASE_URL
   }
 
 };
