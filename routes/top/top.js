@@ -7,16 +7,25 @@ router.get(`/`,function(req,res,next){
    knex.raw(`SELECT posts.*
        FROM posts JOIN users ON users.id = posts.poster_id where posts.poster_id = ${req.cookies.id}`)
    .then (function(data){
-      console.log("hi",data.rows)
-   res.render('top/top', {
-         data: data.rows  })
-
+      knex.raw("select * from users where id = ?", [req.cookies.id]).then(data2 =>{
+        res.render('top/top', {data: data.rows, data2: data2.rows});
+      })
 })
 });
 // post for edit option
 
 
 /* GET one. */
+router.get('/:id/views', function(req, res, next) {
+  console.log(req.cookies.loggedin)
+   if (req.cookies.loggedin) {
+   knex.raw(`SELECT * from posts WHERE id = '${req.params.id}'`)
+   .then (function(data){
+      res.render('top/view', {data: data.rows, login: req.cookies.loggedin});
+   });
+  }
+});
+
 router.get('/:id/edit', function(req, res, next) {
    knex.raw(`SELECT * from posts WHERE id =
    '${req.params.id}'`)
@@ -28,17 +37,17 @@ router.get('/:id/edit', function(req, res, next) {
 
 // update one
 router.post('/:id/edit', function(req, res, next) {
-   knex.raw(`UPDATE posts SET content = '${req.body.content}' where id =
+   knex.raw(`UPDATE posts SET content = '${req.body.content}', post_pass = '${req.body.password}' where id =
    ${req.params.id}`)
    .then (function(data){
-      console.log(req.body.content)
+      //console.log(req.body.content)
       res.redirect('/top');
    });
 });
 
 //-POST ONE
 router.post('/:id',function(req,res,next){
-  console.log(`${req.body.content}`);
+//  console.log(`${req.body.content}`);
   knex.raw(`INSERT into posts VALUES (DEFAULT,${req.params.id},'${req.body.content}')`).then(function(){
     res.redirect('/createpost/create')
   })
@@ -49,7 +58,6 @@ router.get('/:id/delete',function(req,res,next){
    knex.raw(`DELETE FROM posts WHERE id =
    ${req.params.id}`)
    .then (function(data){
-      console.log(req.body.content)
       res.redirect('/top');
    });
    });

@@ -15,10 +15,11 @@ router.get(`/create`,function(req,res,next){
 //-2 POST
 router.post('/:id',function(req,res,next){
 
-  knex.raw(`INSERT into posts VALUES (DEFAULT,${req.params.id},'${req.body.content}')`).then(function(){
+  knex.raw(`INSERT into posts VALUES (DEFAULT,${req.params.id},'${req.body.content}', '${req.body.password}')`).then(function(){
     res.render('create/confirmpost',{
       id: `${req.params.id}`,
-      content: `${req.body.content}`
+      content: `${req.body.content}`,
+      pass: `${req.body.password}`
     })
   })
 })
