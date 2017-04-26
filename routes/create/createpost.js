@@ -14,7 +14,6 @@ router.get(`/create`,function(req,res,next){
 
 //-2 POST
 router.post('/:id',function(req,res,next){
-  console.log(req.body.location)
   knex.raw(`INSERT into posts VALUES (DEFAULT,${req.params.id},'${req.body.content}', '${req.body.location}', '${req.body.password}')`).then(function(){
     res.render('create/confirmpost',{
       id: `${req.params.id}`,
