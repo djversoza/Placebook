@@ -13,6 +13,13 @@ router.get(`/create`,function(req,res,next){
 })
 
 //-2 POST
+
+// router.post('/:userid',function(req,res,next){
+//   knex.raw(`INSERT into posts VALUES (DEFAULT,${req.params.userid},'${req.body.content}')`).then(function(data){
+//     res.render('create/confirmpost',{
+//       id: `${req.params.userid}`,
+//       content: `${req.body.content}`
+
 router.post('/:id',function(req,res,next){
 
   knex.raw(`INSERT into posts VALUES (DEFAULT,${req.params.id},'${req.body.content}', '${req.body.password}')`).then(function(){
@@ -23,6 +30,17 @@ router.post('/:id',function(req,res,next){
     })
   })
 })
+
+// router.post('/:userid',function(req,res,next){
+//   knex.raw(`INSERT into posts VALUES (DEFAULT,${req.params.userid},'${req.body.content}')`).then(function(data){
+//     res.render('create/confirmpost',{
+//       id: `${req.params.userid}`,
+//       content: `${req.body.content}`
+//     })
+//   })
+// })
+
+
 
 //UPDATE ACCOUNT
 //-1 GET
