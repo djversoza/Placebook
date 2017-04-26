@@ -4,6 +4,7 @@ exports.up = function(knex, Promise) {
   t.increments('id');
   t.integer('poster_id');
   t.text('content').notNullable();
+  t.string('post_pass').notNullable();
 });
 };
 

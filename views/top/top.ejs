@@ -16,8 +16,12 @@
         <td><%= data[i].content %>
            <%console.log(data[i].id)%>
 
-           <a href = "/top/<%= data[i].id %>/edit">
-           <button type="button" name="button" id="edit">Edit Post</button>
+        <a href = "/top/<%= data[i].id %>/edit">
+          <button type="button" name="button" id="edit">Edit Post</button>
+        </a>
+
+        <a href = "/top/<%= data[i].id %>/views">
+          <button type="button" name="button" id="edit">View Post</button>
         </a>
 
         <a href = "/top/<%= data[i].id %>/delete">
@@ -43,6 +47,6 @@
          <button style="margin-left:10px;" type="button" name="button">logout</button>
        </a>
 
-</p>
+     </p>
    </body>
  </html>
