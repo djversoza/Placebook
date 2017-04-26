@@ -8,6 +8,7 @@ const saltRounds = 10;
 router.get('/', function(req, res, next) {
   res.clearCookie("loggedin");
   res.clearCookie("id");
+  res.clearCookie("visitor");
   knex.raw("UPDATE users SET logged_in = false").then(()=>{
     res.render('index');
   })

@@ -17,14 +17,22 @@ router.get(`/`,function(req,res,next){
 
 /* GET one. */
 router.get('/:id/views', function(req, res, next) {
-  console.log(req.cookies.loggedin)
-   if (req.cookies.loggedin) {
    knex.raw(`SELECT * from posts WHERE id = '${req.params.id}'`)
    .then (function(data){
-      res.render('top/view', {data: data.rows, login: req.cookies.loggedin});
+      res.render('top/view', {data: data.rows, login: req.cookies.loggedin, visitor: req.cookies.visitor});
    });
-  }
 });
+
+router.post('/:id/views', function(req, res, next) {
+   knex.raw(`SELECT * from posts WHERE id = '${req.params.id}'`).then(function(data){
+     if (req.body.password === data.rows[0].post_pass) {
+      res.cookie("visitor", true);      
+      res.redirect(`/top/${req.params.id}/views`)
+    }
+   });
+});
+
+// EDIT one ================
 
 router.get('/:id/edit', function(req, res, next) {
    knex.raw(`SELECT * from posts WHERE id =

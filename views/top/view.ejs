@@ -5,14 +5,24 @@
     <title></title>
   </head>
   <body>
-    <%if(login){%>
+    <%if(login || visitor){%>
     <h1>I'm at confirm post!</h1>
 
     <h1><%=data[0].content%></h1>
+    <%}%>
 
+    <%if (!login && !visitor){%>
+    <form method="post">
+      <input type="text" name="password" placeholder="password" />
+      <input type="submit" name="submit" value="Enter" />
+    </form>
+    <%}%>
+
+    <%if(login){%>
     <a href = "/top/<%= data[0].id %>/edit"><button type="button" name="button" id="edit">Edit Post</button></a>
 
-    <a href="/top"><button type="button" name="button">Link to top page</button></a>
+    <a href="/top"><button type="button" name="button">Home page</button></a>
     <%}%>
+
   </body>
 </html>
