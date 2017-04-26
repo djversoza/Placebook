@@ -5,6 +5,7 @@ exports.up = function(knex, Promise) {
   t.integer('poster_id');
   t.text('content').notNullable();
   t.text('location');
+  t.text('dates').notNullable();
   t.string('post_pass').notNullable();
 });
 };
