@@ -37,7 +37,7 @@ router.get(`/updatepost`, function(req,res,next){
 
 //2UPDATE
 router.post('/magicishappening/:postnumber',function(req,res,next){
-  knex.raw(`UPDATE posts SET content='${req.body.content}', post_pass='${req.body.post_pass}' WHERE id=${req.params.postnumber}`).then(function(){
+  knex.raw(`UPDATE posts SET content='${req.body.content}', post_pass='${req.body.post_pass}', location = '${req.body.location}' WHERE id=${req.params.postnumber}`).then(function(){
     res.redirect('/top')
   })
 })
