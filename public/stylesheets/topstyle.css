@@ -183,12 +183,11 @@ tr {
 }
 
 
-#content {
-   width:70%;
-   height: 50%;
+ul {
+  padding-left: 0px;
 }
 
-.contentarea {
-   margin-top: 50px;
-
+.lister{
+  border: solid 3px black;
+  display: block;
 }
