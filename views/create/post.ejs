@@ -62,10 +62,28 @@
       <input id="pac-input" class="controls" type="text"
       placeholder="Enter a location" name="locator">
 
-      <p><label for="userid">Your user id is <%= data.id %></label></p>
+      <label for="userid">Your user id is <%= data.id %></label>
 
-      <p><label for="content">Content</label>
+      <label for="content">Content</label>
       <input type="text" name="content">
+      Month
+      <select name="date">
+        <%for(var i = 1; i < 13; i++) {%>
+          <option><%=i%></option>
+        <%}%>
+      </select>
+      Day
+      <select name="date">
+        <%for(var i = 1; i < 32; i++) {%>
+          <option><%=i%></option>
+        <%}%>
+      </select>
+      Year
+      <select name="date">
+        <%for(var i = 2017; i < 3000; i++) {%>
+          <option><%=i%></option>
+        <%}%>
+      </select>
 
       <label for="password">Password for a post</label>
       <input type="text" name="password"></p>
