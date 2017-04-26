@@ -68,8 +68,25 @@
       <p><label for="content">Content</label>
       <input type="text" name="content" value="<%= data[data.length-1].content %>"></p>
 
-      <p><label for="post_pass">Dates</label>
-      <input type="text" name="dates" value="<%= data[data.length-1].dates %>"></p>
+      <p><label for="dates">Dates</label>
+        Month
+        <select name="date">
+          <%for(var i = 1; i < 13; i++) {%>
+            <option><%=i%></option>
+          <%}%>
+        </select>
+        Day
+        <select name="date">
+          <%for(var i = 1; i < 32; i++) {%>
+            <option><%=i%></option>
+          <%}%>
+        </select>
+        Year
+        <select name="date">
+          <%for(var i = 2017; i < 3000; i++) {%>
+            <option><%=i%></option>
+          <%}%>
+        </select></p>
 
       <p><label for="post_pass">Password for post#</label>
       <input type="text" name="post_pass" value="<%= data[data.length-1].post_pass %>"></p>
