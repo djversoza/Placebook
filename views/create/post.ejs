@@ -62,11 +62,17 @@
       <input id="pac-input" class="controls" type="text"
       placeholder="Enter a location" name="locator">
 
-      <label for="userid">Your user id is <%= data.id %></label>
+      <p><label for="userid">User id# <%= data.id %></label></p>
 
-      <label for="content">Content</label>
-      <input type="text" name="content">
-      Month
+      <p><label for="content">Title</label>
+      <input type="text" name="content"><p>
+
+
+      <p><label for="info">Message</label>
+      <input type="text" name="info"></p>
+
+      <p><label for="dates">Select date</label></p>
+      <p>Month
       <select name="date">
         <%for(var i = 1; i < 13; i++) {%>
           <option><%=i%></option>
@@ -83,18 +89,19 @@
         <%for(var i = 2017; i < 3000; i++) {%>
           <option><%=i%></option>
         <%}%>
-      </select>
+      </select></p>
 
-      <label for="password">Password for a post</label>
+      <p><label for="password">Password</label>
       <input type="text" name="password"></p>
 
-      <input class="submitter" type="submit" name="submit" value="New Post">
+      <p><input class="submitter" type="submit" name="submit" value="Submit"></p>
+
       <input id=""class="locator" type="text" name="location" hidden>
 
     </form>
 
+    <a href="/top"><button type="button" name="button">Cancel</button></a>
 
-    <p><a href="/top"><button type="button" name="button">Home page</button></a></p>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
