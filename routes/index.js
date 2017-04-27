@@ -46,6 +46,7 @@ router.post('/', function(req, res, next) {
 
 //Register for Placebook
 router.get('/register', function(req, res, next) {
+  res.clearCookie("visitor");
   res.render('register');
 });
 
