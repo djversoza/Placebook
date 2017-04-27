@@ -37,7 +37,7 @@ router.get('/:id/edit', function(req, res, next) {
    '${req.params.id}'`)
    .then (function(data){
       console.log(data.rows);
-   res.render('top/edit', {posts: data.rows[0]});
+   res.render('top/edit', {posts: data.rows[0], id: req.cookies.id});
    });
 });
 
