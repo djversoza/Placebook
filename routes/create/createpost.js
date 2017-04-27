@@ -5,7 +5,7 @@ var knex = require('../../db/knex');
 //NEW POST
 //-1 GET
 router.get(`/create`,function(req,res,next){
-  knex.raw(`SELECT users.* FROM users WHERE users.id =${req.cookies.id} `).then(function(data){
+  knex.raw(`SELECT * FROM users WHERE id =${req.cookies.id} `).then(function(data){
     res.render('create/post',{
       data: data.rows[0]
     })
@@ -14,7 +14,7 @@ router.get(`/create`,function(req,res,next){
 
 //-2 POST
 router.post('/:id',function(req,res,next){
-  console.log(`${req.body.date}`)
+
   knex.raw(`INSERT into posts VALUES (DEFAULT,${req.params.id},'${req.body.content}', '${req.body.info}', '${req.body.location}','${req.body.date[0]+"/"+req.body.date[1]+"/"+req.body.date[2]}' , '${req.body.password}')`).then(function(){
     res.render('create/confirmpost',{
       id: `${req.params.id}`,
