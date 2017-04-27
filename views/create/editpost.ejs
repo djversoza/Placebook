@@ -60,7 +60,6 @@
       <span id="place-address"></span>
     </div>
 
-
     <form action="/createpost/magicishappening/<%= data[data.length-1].id %>" method="post">
       <input id="pac-input" class="controls" type="text"
       placeholder="Enter a location" value="<%=data[data.length-1].location%>">
@@ -77,9 +76,7 @@
         <p>Month
         <select name="date">
           <% for(var i = 1; i < 13; i++) { %>
-            if(i === <%= data[data.length-1].dates.split('/')[0] %>) {
              <option><%=i%></option>
-           }
           <%} %>
         </select>
         Day
