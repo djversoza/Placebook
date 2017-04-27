@@ -34,10 +34,12 @@ router.post('/:id/views', (req, res, next) =>{
 
 // EDIT one ================
 
+
 router.get('/:id/edit', function(req, res, next) {
    knex.raw(`SELECT * from posts WHERE id =
    '${req.params.id}'`)
    .then (function(data){
+      console.log(data.rows);
       res.render('top/edit', {posts: data.rows[0]});
    });
 });
@@ -45,7 +47,7 @@ router.get('/:id/edit', function(req, res, next) {
 
 // update one
 router.post('/:id/edit', function(req, res, next) {
-   knex.raw(`UPDATE posts SET content = '${req.body.content}', post_pass = '${req.body.password}', location = '${req.body.location}' where id =
+   knex.raw(`UPDATE posts SET content = '${req.body.content}', post_pass = '${req.body.password}', location = '${req.body.location}', dates='${req.body.date[0]+"/"+req.body.date[1]+"/"+req.body.date[2]}' where id =
    ${req.params.id}`)
    .then (function(data){
       //console.log(req.body.content)
