@@ -12,7 +12,6 @@ router.get(`/`,function(req,res,next){
       })
 })
 });
-// post for edit option
 
 
 /* GET one. */
@@ -32,23 +31,23 @@ router.post('/:id/views', (req, res, next) =>{
    });
 });
 
-// EDIT one ================
-
-
+// EDIT ONE ================
 router.get('/:id/edit', function(req, res, next) {
    knex.raw(`SELECT * from posts WHERE id =
    '${req.params.id}'`)
    .then (function(data){
       console.log(data.rows);
-      res.render('top/edit', {posts: data.rows[0]});
+   res.render('top/edit', {posts: data.rows[0]});
    });
 });
 
 
-// update one
+
+// UPDATE ONE
 router.post('/:id/edit', function(req, res, next) {
-   knex.raw(`UPDATE posts SET content = '${req.body.content}', post_pass = '${req.body.password}', location = '${req.body.location}', dates='${req.body.date[0]+"/"+req.body.date[1]+"/"+req.body.date[2]}' where id =
-   ${req.params.id}`)
+   knex.raw(`UPDATE posts SET content = '${req.body.content}', post_pass = '${req.body.password}', location = '${req.body.location}',
+   info = '${req.body.info}',
+   dates='${req.body.date[0]+"/"+req.body.date[1]+"/"+req.body.date[2]}' where id = ${req.params.id}`)
    .then (function(data){
       //console.log(req.body.content)
       res.redirect('/top');
@@ -71,11 +70,6 @@ router.get('/:id/delete',function(req,res,next){
       res.redirect('/top');
    });
    });
-
-
-
-
-
 
 //UPDATE ACCOUNT
 //-1 GET
@@ -100,7 +94,6 @@ router.get('/logout', (req, res, next) => {
   knex.raw('UPDATE users SET logged_in = false where logged_in = true').then(()=>{
     res.redirect('/')
   });
-
 });
 
 module.exports = router;
