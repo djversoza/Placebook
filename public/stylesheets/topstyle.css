@@ -4,55 +4,26 @@
  * http://animista.net
  * T: @cssanimista
  * ---------------------------------------------- */
- @-webkit-keyframes flip-horizontal-bottom{0%{-webkit-transform:rotateX(0);transform:rotateX(0)}100%{-webkit-transform:rotateX(-180deg);transform:rotateX(-180deg)}}@keyframes flip-horizontal-bottom{0%{-webkit-transform:rotateX(0);transform:rotateX(0)}100%{-webkit-transform:rotateX(-180deg);transform:rotateX(-180deg)}}
-
- @-webkit-keyframes fade-in-top{0%{-webkit-transform:translateY(-50px);transform:translateY(-50px);opacity:0}100%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}}@keyframes fade-in-top{0%{-webkit-transform:translateY(-50px);transform:translateY(-50px);opacity:0}100%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}}
-
- @-webkit-keyframes rotate-in-center{0%{-webkit-transform:rotate(-360deg);transform:rotate(-360deg);opacity:0}100%{-webkit-transform:rotate(0);transform:rotate(0);opacity:1}}@keyframes rotate-in-center{0%{-webkit-transform:rotate(-360deg);transform:rotate(-360deg);opacity:0}100%{-webkit-transform:rotate(0);transform:rotate(0);opacity:1}}
 
  @-webkit-keyframes fade-in-bck{0%{-webkit-transform:translateZ(80px);transform:translateZ(80px);opacity:0}100%{-webkit-transform:translateZ(0);transform:translateZ(0);opacity:1}}@keyframes fade-in-bck{0%{-webkit-transform:translateZ(80px);transform:translateZ(80px);opacity:0}100%{-webkit-transform:translateZ(0);transform:translateZ(0);opacity:1}}@-webkit-keyframes fade-in-bl{0%{-webkit-transform:translateX(-50px) translateY(50px);transform:translateX(-50px) translateY(50px);opacity:0}100%{-webkit-transform:translateX(0) translateY(0);transform:translateX(0) translateY(0);opacity:1}}@keyframes fade-in-bl{0%{-webkit-transform:translateX(-50px) translateY(50px);transform:translateX(-50px) translateY(50px);opacity:0}100%{-webkit-transform:translateX(0) translateY(0);transform:translateX(0) translateY(0);opacity:1}}@-webkit-keyframes fade-in-bottom{0%{-webkit-transform:translateY(50px);transform:translateY(50px);opacity:0}100%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}}@keyframes fade-in-bottom{0%{-webkit-transform:translateY(50px);transform:translateY(50px);opacity:0}100%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}}@-webkit-keyframes fade-in-br{0%{-webkit-transform:translateX(50px) translateY(50px);transform:translateX(50px) translateY(50px);opacity:0}100%{-webkit-transform:translateX(0) translateY(0);transform:translateX(0) translateY(0);opacity:1}}@keyframes fade-in-br{0%{-webkit-transform:translateX(50px) translateY(50px);transform:translateX(50px) translateY(50px);opacity:0}100%{-webkit-transform:translateX(0) translateY(0);transform:translateX(0) translateY(0);opacity:1}}@-webkit-keyframes fade-in-fwd{0%{-webkit-transform:translateZ(-80px);transform:translateZ(-80px);opacity:0}100%{-webkit-transform:translateZ(0);transform:translateZ(0);opacity:1}}@keyframes fade-in-fwd{0%{-webkit-transform:translateZ(-80px);transform:translateZ(-80px);opacity:0}100%{-webkit-transform:translateZ(0);transform:translateZ(0);opacity:1}}@-webkit-keyframes fade-in-left{0%{-webkit-transform:translateX(-50px);transform:translateX(-50px);opacity:0}100%{-webkit-transform:translateX(0);transform:translateX(0);opacity:1}}@keyframes fade-in-left{0%{-webkit-transform:translateX(-50px);transform:translateX(-50px);opacity:0}100%{-webkit-transform:translateX(0);transform:translateX(0);opacity:1}}@-webkit-keyframes fade-in-right{0%{-webkit-transform:translateX(50px);transform:translateX(50px);opacity:0}100%{-webkit-transform:translateX(0);transform:translateX(0);opacity:1}}@keyframes fade-in-right{0%{-webkit-transform:translateX(50px);transform:translateX(50px);opacity:0}100%{-webkit-transform:translateX(0);transform:translateX(0);opacity:1}}@-webkit-keyframes fade-in-tl{0%{-webkit-transform:translateX(-50px) translateY(-50px);transform:translateX(-50px) translateY(-50px);opacity:0}100%{-webkit-transform:translateX(0) translateY(0);transform:translateX(0) translateY(0);opacity:1}}@keyframes fade-in-tl{0%{-webkit-transform:translateX(-50px) translateY(-50px);transform:translateX(-50px) translateY(-50px);opacity:0}100%{-webkit-transform:translateX(0) translateY(0);transform:translateX(0) translateY(0);opacity:1}}@-webkit-keyframes fade-in-top{0%{-webkit-transform:translateY(-50px);transform:translateY(-50px);opacity:0}100%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}}@keyframes fade-in-top{0%{-webkit-transform:translateY(-50px);transform:translateY(-50px);opacity:0}100%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}}@-webkit-keyframes fade-in-tr{0%{-webkit-transform:translateX(50px) translateY(-50px);transform:translateX(50px) translateY(-50px);opacity:0}100%{-webkit-transform:translateX(0) translateY(0);transform:translateX(0) translateY(0);opacity:1}}@keyframes fade-in-tr{0%{-webkit-transform:translateX(50px) translateY(-50px);transform:translateX(50px) translateY(-50px);opacity:0}100%{-webkit-transform:translateX(0) translateY(0);transform:translateX(0) translateY(0);opacity:1}}@-webkit-keyframes fade-in{0%{opacity:0}100%{opacity:1}}@keyframes fade-in{0%{opacity:0}100%{opacity:1}}
 
- @-webkit-keyframes fade-in-bottom{0%{-webkit-transform:translateY(50px);transform:translateY(50px);opacity:0}100%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}}@keyframes fade-in-bottom{0%{-webkit-transform:translateY(50px);transform:translateY(50px);opacity:0}100%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}}
+
 
 
 
 body {
   margin: 0;
-
+  background-color: Gainsboro !important;
+}
+button{
+  background-color: white;
 }
 
 a {
-  color: #00B7FF;
+  text-decoration: none;
+  color: grey !important;
 }
 
-h1 {
-  font-family: Tahoma, Geneva, sans-serif;
-  color: white;
-  text-shadow: 2px 2px 5px black;
-  padding: 3%;
-}
-
-p {
-  font-family: Tahoma, Geneva, sans-serif;
-  padding-left: 10px;
-  margin-bottom: 10px;
-  color: white;
-}
-
-#log {
-  background-color: white;
-  color:grey;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-#log:hover{
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 30px;
-  padding-right: 30px;
-  text-align: center;
-}
 
 .login {
   width: 100%;
@@ -61,8 +32,14 @@ p {
   box-shadow: 0px 20px 20px 10px rgba(0, 0, 0, 0.8);
 }
 
+.logwrap {
+  float:right;
+  margin-bottom:5px;
+}
+
 
 .title{
+
   margin-top: 0;
   margin-left: 10px;
   animation-duration: 2s;
@@ -74,120 +51,32 @@ p {
   color: white;
 }
 
-.accT{
-  font-size: 40px;
-  font-family: Tahoma, Geneva, sans-serif;
-  text-shadow: 7px 15px 10px rgba(0, 0, 0, 0.8);
+.info{
+  display: inline;
   color: white;
 }
 
-.reg{
-  border-style: none;
-  border-radius: 50px;
-  background-color: white;
-  color:grey;
-  padding-left: 40px;
-  padding-right: 40px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  box-shadow: 6px 8px 10px rgba(0, 0, 0, 0.5);
-  font-size: 18px;
+.infobox{
+  padding: 40px;
+  margin-top:30px;
+  margin-bottom:30px;
+  box-shadow: 10px 10px 20px 3px rgba(0, 0, 0, 0.8);
+  border:solid 1px Gainsboro;
+  border-radius:6px;
+  background:linear-gradient(to bottom right, rgb(18, 27, 43), rgb(32, 52, 86));
 }
 
-.reg:hover{
-  padding-top: 27px;
-  padding-bottom: 27px;
-  padding-left: 45px;
-  padding-right: 45px;
-  text-align: center;
-  font-size: 28px;
-}
 
-.forma{
-  float: right;
-  margin-right: 8px;
+#edit{
+  text-decoration: none;
 }
 
 .newnew {
-  padding: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: 2px;
+  margin-right: 2px;
   border-style: none;
   border-radius: 50px;
-  box-shadow: 2px 8px 20px 3px rgba(0, 0, 0, 0.6)
-}
-
-
-.innerDiv{
-  text-align: center;
-  width: 100%;
-  position: absolute;
-  top: 150px;
-}
-
-.foot{
-  clear: both;
-  position: relative;
-  background: linear-gradient(to bottom right, rgb(18, 27, 43), rgb(32, 52, 86), rgb(61, 89, 140));
-  margin-top: 380px;
-  height: 500px;
-}
-
-.desc{
-  margin-top: 20px;
-  text-align: center;
-  width: 25%;
-  display: inline-block;
-  animation-name: fade-in-bottom;
-  animation-duration: 1s;
-}
-
-.footbox{
-  text-align: center;
-  box-shadow: 0px -20px 20px 6px rgba(0, 0, 0, 0.8);
-}
-
-#descmid{
-  margin-left: 43px;
-  margin-right: 43px;
-}
-/*Register styles*/
-
-#rdy {
-  margin-right: 7px;
-  color: white;
-  font-family: Tahoma, Geneva, sans-serif;
-  text-shadow: 2px 2px 5px black;
-}
-
-.regg {
- padding: 10px;
-}
-
-.table {
-   margin-top:3%;
-   column-gap: 2px;
-   margin-left:2%;
-   padding:20px;
-   height: 30%;
-   width: 100%;
-
-}
-
-button {
-   border-radius: 40%;
-}
-
-
-tr {
-    width: 100%;
-    height: 50px;
-}
-
-
-ul {
-  padding-left: 0px;
-}
-
-.lister{
-  border: solid 3px black;
-  display: block;
+  box-shadow: 3px 3px 7px 1px rgba(0, 0, 0, 0.6)
 }

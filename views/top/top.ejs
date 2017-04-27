@@ -7,33 +7,40 @@
   </head>
   <body>
   <div class="login">
-    <h1 class="title">Placebook</h1>
-    <a href="/createpost/updateacc"><button type="button" name="button">Edit account</button></a>
+    <h1 class="title" >Placebook</h1>
+    <div class="logwrap">
+      <a style="margin-bottom: 8px;" href="/createpost/updateacc"><button class="newnew" type="button" name="button">Edit account</button></a>
+      <a style="margin-bottom: 8px; " href="top/logout" style="margin-left:15px;"><button class="newnew" type="button" name="button">logout</button></a>
+    </div>
+    <a href="createpost/create" style="margin-left: 10px; margin-top: 10px;"><button style="margin-top: 8px; position:fixed;" class="newnew" type="button" name="button">new post</button>  </a>
+
 </div>
 
 <div class="container">
 
 
 
-   Your recent location posts
-   <a href="createpost/create" style="margin-left: 10px">
-     <button type="button" name="button">new post</button>
-   </a>
-   <a href="top/logout" style="margin-left:15px;">
-     <button type="button" name="button">logout</button>
-   </a>
+
 
   <div class="row">
     <div class="col-xs-12">
-      <!-- <div class="wraps" style="margin-top:40px; margin-bottom:40px; border: 3px solid black"> -->
         <% for (var i=0; i< data.length; i++) {%>
+
           <div style="border: 3px solid black; margin-top:30px; margin-bottom:30px">
               <h3 style="display: inline;"><%= data[i].content %> | <%= data[i].location%> | <%=data[i].dates %></h3>
                 <a style="display: inline;" href = "/top/<%= data[i].id %>/edit"><button type="button" name="button" id="edit">Edit</button></a>
+          <div class="infobox">
+              <h3 class="info"><%= data[i].content %> | <%= data[i].location%> | <%=data[i].dates %></h3>
 
-                <a style="display: inline;" href = "/top/<%= data[i].id %>/views"><button type="button" name="button" id="edit">View</button></a>
+              <div class="opts" style="float:right; margin-top: 5px;">
 
-                <a style="display: inline;" href = "/top/<%= data[i].id %>/delete"><button type="button" name="button" id="delete">Delete</button></a>
+              <a href="/top/<%= data[i].id %>/views" class="new"id="edit"><button class="newnew" type="button" name="button" >View</button></a>
+
+
+              <a href = "/top/<%= data[i].id %>/edit"><button class="newnew" type="button" name="button" id="edit">Edit</button></a>
+
+              <a href = "/top/<%= data[i].id %>/delete"><button class="newnew" type="button" name="button" id="delete">Delete</button></a>
+            </div>
 
           </div>
         <% } %>
