@@ -68,13 +68,13 @@
       <p><label for="id">Post# <%= data[data.length-1].id %></label></p>
 
       <p><label for="content">Title</label>
-      <input type="text" name="title" value="<%= data[data.length-1].title %>"></p>
-
-      <p><label for="content">Message</label>
       <input type="text" name="content" value="<%= data[data.length-1].content %>"></p>
 
-      <p><label for="dates">Select / change date </label>
-        Month
+      <p><label for="info">Message</label>
+      <input type="text" name="info" value="<%= data[data.length-1].info %>"></p>
+
+      <p><label for="dates">Change date</label><p>
+        <p>Month
         <select name="date">
           <% for(var i = 1; i < 13; i++) { %>
             if(i === <%= data[data.length-1].dates.split('/')[0] %>) {

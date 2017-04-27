@@ -5,11 +5,8 @@
     <title></title>
   </head>
   <body>
-    <h1>I'm at account edit page!</h1>
 
     <form action="/createpost/updateacc/post/<%= data.id %>" method="post">
-
-      <h2>Your User id is <%= data.id %></h2>
 
       <label for="">User name</label>
       <input type="text" name="name" value="<%= data.name %>">
@@ -18,9 +15,9 @@
 
     </form>
 
-    <a href="/createpost/updateacc/delete"><button type="button" name="button">Delete account</button></a>
+    <a href="/createpost/updateacc/delete"><button type="button" name="button">Delete</button></a>
 
-    <a href="/top"><button type="button" name="button">Home page</button></a>
+    <a href="/top"><button type="button" name="button">Home</button></a>
 
   </body>
 </html>

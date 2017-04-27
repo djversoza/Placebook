@@ -15,12 +15,14 @@ router.get(`/create`,function(req,res,next){
 //-2 POST
 router.post('/:id',function(req,res,next){
   console.log(`${req.body.date}`)
-  knex.raw(`INSERT into posts VALUES (DEFAULT,${req.params.id},'${req.body.content}', '${req.body.location}','${req.body.date[0]+"/"+req.body.date[1]+"/"+req.body.date[2]}' , '${req.body.password}')`).then(function(){
+  knex.raw(`INSERT into posts VALUES (DEFAULT,${req.params.id},'${req.body.content}', '${req.body.info}', '${req.body.location}','${req.body.date[0]+"/"+req.body.date[1]+"/"+req.body.date[2]}' , '${req.body.password}')`).then(function(){
     res.render('create/confirmpost',{
       id: `${req.params.id}`,
       content: `${req.body.content}`,
       pass: `${req.body.password}`,
-      location: `${req.body.location}`
+      location: `${req.body.location}`,
+      title:`${req.body.info}`,
+      date: `${req.body.date[0]+"/"+req.body.date[1]+"/"+req.body.date[2]}`
     })
   })
 })
@@ -55,14 +57,17 @@ router.get(`/updateacc/`,function(req,res,next){
 
 //-2 POST
 router.post('/updateacc/post/:id',function(req,res,next){
-  knex.raw(`UPDATE users SET name='${req.body.name}', password='${req.body.password}' WHERE id=${req.params.id}`).then(function(){
+  knex.raw(`UPDATE users SET name='${req.body.name}', password='${req.body.password}', info='${req.body.info}' WHERE id=${req.params.id}`).then(function(){
     res.redirect('/top')
   })
 })
 
 //DELETE ACCOUNT
 router.get('/updateacc/delete',function(req,res,next){
-  knex.raw(`DELETE FROM users WHERE id=${req.cookies.id}`).then(function(){
+  var delete1 = knex.raw(`DELETE FROM users WHERE id=${req.cookies.id}`);
+  var delete2 = knex.raw(`DELETE FROM posts WHERE poster_id=${req.cookies.id}`)
+
+  Promise.all([delete1,delete2]).then(function(){
     res.redirect('/')
   })
 })
