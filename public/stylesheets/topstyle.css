@@ -21,9 +21,6 @@ body {
 
 }
 
-a {
-  color: #00B7FF;
-}
 
 h1 {
   font-family: Tahoma, Geneva, sans-serif;
@@ -39,20 +36,7 @@ p {
   color: white;
 }
 
-#log {
-  background-color: white;
-  color:grey;
-  padding-left: 20px;
-  padding-right: 20px;
-}
 
-#log:hover{
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 30px;
-  padding-right: 30px;
-  text-align: center;
-}
 
 .login {
   width: 100%;
@@ -74,120 +58,32 @@ p {
   color: white;
 }
 
-.accT{
-  font-size: 40px;
-  font-family: Tahoma, Geneva, sans-serif;
-  text-shadow: 7px 15px 10px rgba(0, 0, 0, 0.8);
-  color: white;
+a {
+  text-decoration: none;
+  color: grey !important;
 }
 
-.reg{
-  border-style: none;
-  border-radius: 50px;
+button{
   background-color: white;
-  color:grey;
-  padding-left: 40px;
-  padding-right: 40px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  box-shadow: 6px 8px 10px rgba(0, 0, 0, 0.5);
-  font-size: 18px;
 }
-
-.reg:hover{
-  padding-top: 27px;
-  padding-bottom: 27px;
-  padding-left: 45px;
-  padding-right: 45px;
-  text-align: center;
-  font-size: 28px;
-}
-
-.forma{
-  float: right;
-  margin-right: 8px;
+#edit{
+  text-decoration: none;
 }
 
 .newnew {
-  padding: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: 2px;
+  margin-right: 2px;
   border-style: none;
   border-radius: 50px;
-  box-shadow: 2px 8px 20px 3px rgba(0, 0, 0, 0.6)
+  box-shadow: 3px 3px 7px 1px rgba(0, 0, 0, 0.6)
 }
 
 
-.innerDiv{
-  text-align: center;
-  width: 100%;
-  position: absolute;
-  top: 150px;
-}
-
-.foot{
-  clear: both;
-  position: relative;
-  background: linear-gradient(to bottom right, rgb(18, 27, 43), rgb(32, 52, 86), rgb(61, 89, 140));
-  margin-top: 380px;
-  height: 500px;
-}
-
-.desc{
-  margin-top: 20px;
-  text-align: center;
-  width: 25%;
-  display: inline-block;
-  animation-name: fade-in-bottom;
-  animation-duration: 1s;
-}
-
-.footbox{
-  text-align: center;
-  box-shadow: 0px -20px 20px 6px rgba(0, 0, 0, 0.8);
-}
-
-#descmid{
-  margin-left: 43px;
-  margin-right: 43px;
-}
-/*Register styles*/
-
-#rdy {
+/*#rdy {
   margin-right: 7px;
   color: white;
   font-family: Tahoma, Geneva, sans-serif;
   text-shadow: 2px 2px 5px black;
-}
-
-.regg {
- padding: 10px;
-}
-
-.table {
-   margin-top:3%;
-   column-gap: 2px;
-   margin-left:2%;
-   padding:20px;
-   height: 30%;
-   width: 100%;
-
-}
-
-button {
-   border-radius: 40%;
-}
-
-
-tr {
-    width: 100%;
-    height: 50px;
-}
-
-
-ul {
-  padding-left: 0px;
-}
-
-.lister{
-  border: solid 3px black;
-  display: block;
-}
+}*/
