@@ -63,7 +63,35 @@
           width: auto;
        }
 
+       .booter{
+         border-style: none;
+         color: grey;
+         background-color: white;
+         border-radius: 50px;
+         margin: 5px;
+       }
+
+       #boxer{
+         text-align: center;
+         border: 3px solid black;
+         padding-top: 20px;
+         padding-bottom: 20px;
+         background:linear-gradient(to bottom right, rgb(18, 27, 43), rgb(32, 52, 86));
+         height:50%;
+       }
+       p{
+         color: white;
+         font-family: Tahoma, Geneva, sans-serif;
+       }
+
+       #content, #info, #password {
+        border-style: none;
+        border-radius: 50px;
+        padding: 5px;
+       }
+
      </style>
+     <%if(parseInt(id) === posts.poster_id){%>
 
      <div id="map"></div>
 
@@ -81,23 +109,18 @@
 
 
 <!-- p tag codes below pull info from db to populate fiels on edit page-->
-      <p>
-         Post # <%= posts.id %>
-      </p>
+  <div id="boxer">
+
       <p>
          <label for="content">Title</label>
-      </p>
-
-      <!--content = title of the post-->
-      <p>
          <input type="text" id="content" name= "content" placeholder = "title" value ="<%= posts.content %>">
       </p>
+
+
 
       <!--info = details of the post-->
       <p>
          <label for="info">Message</label>
-      </p>
-      <p>
          <input type="text" id="info" name= "info" placeholder = "message" value ="<%= posts.info %>">
       </p>
 
@@ -122,19 +145,25 @@
          <%}%>
       </select>
       </p>
-      <p>
-         Password
-      </p>
-      <p>
-         <input type="text" id="password" name= "password" placeholder = "password" value ="<%= posts.post_pass %>" >
-      </p>
+        <div>
+          <p>
+            Password
+            <input type="text" id="password" name= "password" placeholder = "password" value ="<%= posts.post_pass %>" >
+          </p>
 
-         <input id=""class="locator" type="text" name="location" hidden>
+        </div>
 
-         <input class="submitter" type="submit" name="submit" value="Submit">
 
-         <a href="/top"><button type="button" name="button">Home</button></a>
+         <input class="locator" type="text" name="location" hidden>
+
+         <input class="submitter booter" type="submit" name="submit" value="Submit">
+
+         <a href="/top"><button class="booter" type="button" name="button">Home</button></a>
       </form>
+    </div>
+      <%} else {%>
+        <h1>You do not have access to this page</h1>
+        <%}%>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
       <script>

@@ -16,6 +16,7 @@
         height: 100%;
         margin: 0;
         padding: 0;
+        background-color: Gainsboro;
       }
       .controls {
         background-color: #fff;
@@ -47,8 +48,28 @@
       #map #infowindow-content {
         display: inline;
       }
+      .boxer{
+        text-align: center;
+        border: 3px solid black;
+        background: linear-gradient(to bottom right, rgb(18, 27, 43), rgb(32, 52, 86));
+      }
+      p {
+        color: white;
+        font-family: Tahoma, Geneva, sans-serif;
+      }
+      #putter{
+        border-style: none;
+        border-radius: 50px;
+        padding: 5px;
+      }
 
-
+      .submitter{
+        border-style: none;
+        color: grey;
+        background-color: white;
+        border-radius: 50px;
+        margin: 5px;
+      }
 
     </style>
 
@@ -64,13 +85,13 @@
       <input id="pac-input" class="controls" type="text"
       placeholder="Enter a location" value="<%=data[data.length-1].location%>">
 
-      <p><label for="id">Post# <%= data[data.length-1].id %></label></p>
+      <div class="boxer">
 
       <p><label for="content">Title</label>
-      <input type="text" name="content" value="<%= data[data.length-1].content %>"></p>
+      <input id="putter"  type="text" name="content" value="<%= data[data.length-1].content %>"></p>
 
       <p><label for="info">Message</label>
-      <input type="text" name="info" value="<%= data[data.length-1].info %>"></p>
+      <input id="putter" type="text" name="info" value="<%= data[data.length-1].info %>"></p>
 
       <p><label for="dates">Change date</label><p>
         <p>Month
@@ -93,14 +114,14 @@
         </select></p>
 
       <p><label for="post_pass">Password</label>
-      <input type="text" name="post_pass" value="<%= data[data.length-1].post_pass %>"></p>
+      <input id="putter"  type="text" name="post_pass" value="<%= data[data.length-1].post_pass %>"></p>
       <input id=""class="locator" type="text" name="location" hidden>
 
       <input class="submitter" type="submit" name="submit" value="Submit">
       <input class="submitter" type="submit" name="submit" value="Home">
 
     </form>
-
+</div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
