@@ -66,9 +66,24 @@
 
     <h1><%=data[0].content%></h1>
 
+    <p>
+      Post # <%= posts.id %>
+    </p>
+    <p>Title</p>
+    <p><%= posts.content %></p>
 
 
-    <%}%>
+    <!--info = details of the post-->
+    <p>Message</p>
+    <p><%= posts.info %></p>
+
+    <p>Date</p>
+    <p></p>
+
+    <p>Password</p>
+    <p><%= posts.post_pass %></p>
+
+
 
     <%if(parseInt(id) === data[0].poster_id){%>
       <h1>Password is: <%=data[0].post_pass%></h1>
