@@ -34,7 +34,6 @@
         text-overflow: ellipsis;
         width: 400px;
       }
-
       .controls:focus {
         border-color: #4d90fe;
       }
@@ -47,14 +46,12 @@
       #map #infowindow-content {
         display: inline;
       }
-
     </style>
 
 
 
     <%if(parseInt(id) === data[0].poster_id || parseInt(visitor) === data[0].id){%>
       <div id="map"></div>
-
       <div id="infowindow-content">
         <span id="place-name"  class="title"></span><br>
         Place ID <span id="place-id"></span><br>
@@ -63,27 +60,23 @@
         <span id="place-address"></span>
       </div>
     <div style="text-align:center;"class="wrapup">
+
+
     <%if(parseInt(id) === data[0].poster_id){%>
     <a href = "/top/<%= data[0].id %>/edit"><button type="button" name="button" id="edit">Edit Post</button></a>
 
     <a href="/top"><button type="button" name="button">Home page</button></a>
     <%}%>
 
+
     <h1>Post # is <%=data[0].id%></h1>
-
     <h1><%=data[0].content%></h1>
-
     <h1 style="margin-bottom: 2px;">Message</h1>
     <h2 style="margin-top: 0px;"><%=data[0].info%></h2>
-
     <h1 style="margin-bottom: 2px;">Where</h1>
     <h2 style="margin-top: 0px;"><%=data[0].location%></h2>
-
     <h1 style="margin-bottom: 2px;">When</h1>
     <h2 style="margin-top: 0px;"><%=data[0].dates%></h2>
-
-
-
     <%}%>
 
     <%if(parseInt(id) === data[0].poster_id){%>
@@ -98,17 +91,22 @@
     <%}%>
     </div>
 
+    <%if(parseInt(id) === data[0].poster_id){%>
+    <a href = "/top/<%= data[0].id %>/edit"><button type="button" name="button" id="edit">Edit Post</button></a>
+    <a href="/top"><button type="button" name="button">Home page</button></a>
+    <%}%>
+
+
+
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <script>
-
     $('.submitter').click(() =>{
        var inp = $("#pac-input").val()
       $('.locator').val(inp)
     })
-
       function initMap() {
          $.post("https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyC_lA6iptoJVWTAmRdwroE2Cg-hvarPN_g", (data)=>{
          console.log(data)
@@ -116,13 +114,10 @@
           center: {lat: data.location.lat, lng: data.location.lng},
           zoom: 13
         });
-
         var input = document.getElementById('pac-input');
-
         var autocomplete = new google.maps.places.Autocomplete(
             input, {placeIdOnly: true});
         autocomplete.bindTo('bounds', map);
-
         map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
         var infowindow = new google.maps.InfoWindow();
         var infowindowContent = document.getElementById('infowindow-content');
@@ -134,16 +129,13 @@
         marker.addListener('click', function() {
           infowindow.open(map, marker);
         });
-
         autocomplete.addListener('place_changed', function() {
           infowindow.close();
           var place = autocomplete.getPlace();
-
           if (!place.place_id) {
             return;
           }
           geocoder.geocode({'placeId': place.place_id}, function(results, status) {
-
             if (status !== 'OK') {
               window.alert('Geocoder failed due to: ' + status);
               return;
