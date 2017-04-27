@@ -39,7 +39,7 @@ a {
 
 
 .title{
-
+  font-weight: bold;
   margin-top: 0;
   margin-left: 10px;
   animation-duration: 2s;
