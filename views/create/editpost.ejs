@@ -73,20 +73,20 @@
         <select name="date">
           <% for(var i = 1; i < 13; i++) { %>
             if(i === <%= data[data.length-1].dates.split('/')[0] %>) {
-             <option value="<%= data[data.length-1].dates.split('/')[0] %>"><%=i%></option>
+             <option><%=i%></option>
            }
           <%} %>
         </select>
         Day
         <select name="date">
           <%for(var i = 1; i < 32; i++) {%>
-            <option value="<%= data[data.length-1].dates.split('/')[1] %>"><%=i%></option>
+            <option><%=i%></option>
           <%}%>
         </select>
         Year
         <select name="date">
           <%for(var i = 2017; i < 3000; i++) {%>
-            <option value="<%= data[data.length-1].dates.split('/')[2] %>"><%=i%></option>
+            <option><%=i%></option>
           <%}%>
         </select></p>
 
