@@ -54,9 +54,12 @@ a {
 .info{
   display: inline;
   color: white;
+
 }
 
 .infobox{
+  animation-duration: 2s;
+  animation-name: fade-in-bck;
   padding: 40px;
   margin-top:30px;
   margin-bottom:30px;
