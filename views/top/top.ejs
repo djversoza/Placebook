@@ -7,8 +7,8 @@
   </head>
   <body>
   <div class="login">
-    <h1 class="title" style="padding: 0px; margin-top:10px;">Placebook</h1>
-    <div style="float:right; margin-bottom:5px;">
+    <h1 class="title" >Placebook</h1>
+    <div class="logwrap">
       <a style="margin-bottom: 8px;" href="/createpost/updateacc"><button class="newnew" type="button" name="button">Edit account</button></a>
       <a style="margin-bottom: 8px; " href="top/logout" style="margin-left:15px;"><button class="newnew" type="button" name="button">logout</button></a>
     </div>
@@ -25,13 +25,18 @@
   <div class="row">
     <div class="col-xs-12">
         <% for (var i=0; i< data.length; i++) {%>
-          <div style="padding: 20px; margin-top:30px; margin-bottom:30px; box-shadow: 10px 10px 20px 3px rgba(0, 0, 0, 0.8);border:solid 1px Gainsboro; border-radius:6px; background-color:white;">
-              <h3 style="display: inline;"><%= data[i].content %> | <%= data[i].location%> | <%=data[i].dates %></h3>
+          <div class="infobox">
+              <h3 class="info"><%= data[i].content %> | <%= data[i].location%> | <%=data[i].dates %></h3>
+
+              <div class="opts" style="float:right; margin-top: 5px;">
+
               <a href="/top/<%= data[i].id %>/views" class="new"id="edit"><button class="newnew" type="button" name="button" >View</button></a>
 
               <a href = "/top/<%= data[i].id %>/edit"><button class="newnew" type="button" name="button" id="edit">Edit</button></a>
 
               <a href = "/top/<%= data[i].id %>/delete"><button class="newnew" type="button" name="button" id="delete">Delete</button></a>
+            </div>
+
           </div>
         <% } %>
         </div>
