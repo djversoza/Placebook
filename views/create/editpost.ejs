@@ -48,6 +48,8 @@
         display: inline;
       }
 
+      
+
     </style>
 
     <div id="map"></div>
@@ -64,6 +66,10 @@
       placeholder="Enter a location" value="<%=data[data.length-1].location%>">
 
       <p><label for="id">Post# is <%= data[data.length-1].id %>.</label></p>
+
+.content {
+
+}
 
       <p><label for="content">Content</label>
       <input type="text" name="content" value="<%= data[data.length-1].content %>"></p>

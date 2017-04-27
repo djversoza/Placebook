@@ -59,6 +59,10 @@
          display: inline;
        }
 
+       content {
+          width: auto;
+       }
+
      </style>
 
      <div id="map"></div>
@@ -75,11 +79,40 @@
         placeholder="Enter a location" value="<%=posts.location%>">
 
 <!-- p tag codes below pull info from db to populate fiels on edit page-->
-         <p>
-            <label for = "content">Posts</label>
-            <input type  = "text" id="content" name= "content" placeholder = "content">
+<div>
 
-            <input type  = "text" id="password" name= "password" placeholder = "password">
+
+
+
+
+
+
+
+            <label for = "content">Post</label>
+            <input type  = "text" id="content" name= "content" placeholder = "content" value ="<%= posts.content %>"  >
+
+</div>
+<p>
+            Month
+            <select name="date">
+             <%for(var i = 1; i < 13; i++) {%>
+                <option><%=i%></option>
+             <%}%>
+            </select>
+            Day
+            <select name="date">
+             <%for(var i = 1; i < 32; i++) {%>
+                <option><%=i%></option>
+             <%}%>
+            </select>
+            Year
+            <select name="date">
+             <%for(var i = 2017; i < 3000; i++) {%>
+                <option><%=i%></option>
+             <%}%>
+            </select>
+
+            <input type="text" id="password" name= "password" placeholder = "password" value ="<%= posts.post_pass %>" >
 
          </p>
 
