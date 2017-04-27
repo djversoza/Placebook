@@ -13,6 +13,7 @@
       }
       /* Optional: Makes the sample page fill the window. */
       html, body {
+        background-color: Gainsboro;
         height: 100%;
         margin: 0;
         padding: 0;
@@ -46,6 +47,51 @@
       #map #infowindow-content {
         display: inline;
       }
+
+      /*=======info styling======*/
+      h1, h2{
+        color: white;
+        font-family: Tahoma, Geneva, sans-serif;
+        text-shadow: 8px 11px 10px rgba(0, 0, 0, 0.8);
+      }
+
+      #edit{
+        margin-top: 3px;
+        padding: 5px;
+        border-style: none;
+        color: grey;
+        background-color: white;
+        border-radius: 50px;
+      }
+
+      .visits{
+        margin-top: 280px;
+        width: 100%;
+        text-align: center;
+      }
+
+      #nopass{
+        width: 170px;
+        padding: 10px;
+        border-radius: 50px;
+        border-style: none;
+        box-shadow: 8px 8px 15px 3px rgba(0, 0, 0, 0.4);
+      }
+
+      #noent{
+        color: grey;
+        box-shadow: 8px 7px 12px 2px rgba(0, 0, 0, 0.4);
+        border-style: none;
+        border-radius: 50px;
+        background-color: white;
+        padding: 8px;
+        width: 70px;
+      }
+      #inst{
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: grey;
+      }
+
     </style>
 
 
@@ -59,18 +105,19 @@
         placeholder="Enter a location" value="<%=data[0].location%>">
         <span id="place-address"></span>
       </div>
+
     <div style="text-align:center;"class="wrapup">
+      <div style="border: 3px solid grey; border-radius:5px; background:linear-gradient(to bottom right, rgb(18, 27, 43), rgb(32, 52, 86))">
 
 
     <%if(parseInt(id) === data[0].poster_id){%>
     <a href = "/top/<%= data[0].id %>/edit"><button type="button" name="button" id="edit">Edit Post</button></a>
 
-    <a href="/top"><button type="button" name="button">Home page</button></a>
+    <a href="/top"><button type="button" name="button" id="edit">Home page</button></a>
     <%}%>
 
 
-    <h1>Post # is <%=data[0].id%></h1>
-    <h1><%=data[0].content%></h1>
+    <h1>Title: <%=data[0].content%></h1>
     <h1 style="margin-bottom: 2px;">Message</h1>
     <h2 style="margin-top: 0px;"><%=data[0].info%></h2>
     <h1 style="margin-bottom: 2px;">Where</h1>
@@ -84,17 +131,18 @@
     <%}%>
 
     <%if (!id && (!visitor || parseInt(visitor) != data[0].id)){%>
+  <div class="visits">
+    <h1 id="inst">Enter password</h1>
     <form method="post">
-      <input type="text" name="password" placeholder="password" />
-      <input type="submit" name="submit" value="Enter" />
+      <input id="nopass" type="text" name="password" placeholder="password" />
+      <input id="noent" type="submit" name="submit" value="Enter" />
     </form>
+  </div>
     <%}%>
     </div>
+    </div>
 
-    <%if(parseInt(id) === data[0].poster_id){%>
-    <a href = "/top/<%= data[0].id %>/edit"><button type="button" name="button" id="edit">Edit Post</button></a>
-    <a href="/top"><button type="button" name="button">Home page</button></a>
-    <%}%>
+
 
 
 
@@ -162,5 +210,5 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCiUZiGyQbF0ZM8vsHhZBBYxD99NEArhTg&libraries=places&callback=initMap"
         async defer></script>
 
-  </body> 
+  </body>
 </html>
