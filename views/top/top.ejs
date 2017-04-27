@@ -12,7 +12,7 @@
       <a style="margin-bottom: 8px;" href="/createpost/updateacc"><button class="newnew" type="button" name="button">Edit account</button></a>
       <a style="margin-bottom: 8px; " href="top/logout" style="margin-left:15px;"><button class="newnew" type="button" name="button">logout</button></a>
     </div>
-    <a href="createpost/create" style="margin-left: 10px; margin-top: 30px;"><button style="margin-top: 10px; display:fixed;" class="newnew" type="button" name="button">new post</button>  </a>
+    <a href="createpost/create" style="margin-left: 10px; margin-top: 10px;"><button style="margin-top: 8px; position:fixed;" class="newnew" type="button" name="button">new post</button>  </a>
 
 </div>
 
@@ -24,9 +24,8 @@
 
   <div class="row">
     <div class="col-xs-12">
-      <!-- <div class="wraps" style="margin-top:40px; margin-bottom:40px; border: 3px solid black"> -->
         <% for (var i=0; i< data.length; i++) {%>
-          <div style="padding: 20px; margin-top:30px; margin-bottom:30px; box-shadow: 10px 10px 20px 3px rgba(0, 0, 0, 0.8); border-radius:6px;">
+          <div style="padding: 20px; margin-top:30px; margin-bottom:30px; box-shadow: 10px 10px 20px 3px rgba(0, 0, 0, 0.8);border:solid 1px Gainsboro; border-radius:6px; background-color:white;">
               <h3 style="display: inline;"><%= data[i].content %> | <%= data[i].location%> | <%=data[i].dates %></h3>
               <a href="/top/<%= data[i].id %>/views" class="new"id="edit"><button class="newnew" type="button" name="button" >View</button></a>
 
