@@ -44,7 +44,6 @@ router.post('/magicishappening/:postnumber',function(req,res,next){
   })
 })
 
-
 //UPDATE ACCOUNT
 //-1 GET
 router.get(`/updateacc/`,function(req,res,next){
