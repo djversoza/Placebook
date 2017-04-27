@@ -5,23 +5,55 @@
     <title></title>
   </head>
   <body>
+  <style>
+  body {
+    background-color: Gainsboro;
+  }
+
+  #wraps{
+    text-align:center;
+    margin-top: 200px;
+  }
+
+ h1 {
+    font-family: Tahoma, Geneva, sans-serif;
+    color: white;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: grey;
+    text-shadow: 8px 11px 10px rgba(0, 0, 0, 0.7);
+  }
+
+  .booter{
+    color: grey;
+    box-shadow: 8px 7px 12px 2px rgba(0, 0, 0, 0.4);
+    border-style: none;
+    border-radius: 50px;
+    background-color: white;
+    padding: 8px;
+    width: 70px;
+  }
 
 
-<p>User id: <%= id %>.</p>
+  </style>
 
-<p>Title: <%= title %>.</p>
+<div id="wraps" style="text-align:center;">
 
-<p>Content: <%= content %></p>
+  <h1>User id: <%= id %>.</h1>
 
-<p>Date: <%= date %></p>
+  <h1>Title: <%= title %>.</h1>
 
-<p>Location is: <%= location %></p>
+  <h1>Content: <%= content %></h1>
 
-<p>Your password is: <%= pass %></p>
+  <h1>Date: <%= date %></h1>
 
-<a href="/createpost/updatepost"><button type="button" name="button">Edit</button></a>
+  <h1>Location is: <%= location %></h1>
 
-<a href="/top"><button type="button" name="button">Home</button></a>
+  <h1>Your password is: <%= pass %></h1>
+
+  <a href="/createpost/updatepost"><button class="booter" type="button" name="button">Edit</button></a>
+
+  <a href="/top"><button class="booter" type="button" name="button">Home</button></a>
+</div>
 
   </body>
 </html>
