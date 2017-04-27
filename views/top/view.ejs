@@ -49,14 +49,14 @@
       }
 
       /*=======info styling======*/
-      h1, h2{
+      h1, h2, h3{
         color: white;
         font-family: Tahoma, Geneva, sans-serif;
         text-shadow: 8px 11px 10px rgba(0, 0, 0, 0.7);
       }
 
       #edit{
-        margin-top: 3px;  
+        margin-top: 3px;
         padding: 5px;
         border-style: none;
         color: grey;
@@ -116,8 +116,13 @@
     <a href="/top"><button type="button" name="button" id="edit">Home page</button></a>
     <%}%>
 
+    <%if(parseInt(visitor) === data[0].id){%>
+      <h3 style="margin-bottom:5px;">Don't have an account?</h3>
+      <a style="margin:0px;"href="/register"><button type="button" name="button" id="edit">register</button></a>
+    <%}%>
 
-    <h1>Title: <%=data[0].content%></h1>
+
+    <h1 style="margin-top: 2px;">Title: <%=data[0].content%></h1>
     <h1 style="margin-bottom: 2px;">Message</h1>
     <h2 style="margin-top: 0px;"><%=data[0].info%></h2>
     <h1 style="margin-bottom: 2px;">Where</h1>
