@@ -5,7 +5,7 @@ var knex = require('../../db/knex');
 //GET ALL POSTS
 router.get(`/`,function(req,res,next){
    knex.raw(`SELECT posts.*
-       FROM posts JOIN users ON users.id = posts.poster_id where posts.poster_id = ${req.cookies.id}`)
+       FROM posts JOIN users ON users.id = posts.poster_id where posts.poster_id = ${req.cookies.id} order by posts.id desc`)
    .then (function(data){
       knex.raw("select * from users where id = ?", [req.cookies.id]).then(data2 =>{
         res.render('top/top', {data: data.rows, data2: data2.rows});
