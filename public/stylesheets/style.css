@@ -132,13 +132,14 @@ p {
   position: relative;
   background: linear-gradient(to bottom right, rgb(18, 27, 43), rgb(32, 52, 86), rgb(61, 89, 140));
   margin-top: 380px;
-  height: 500px;
+  height: 300px;
 }
 
 .desc{
   margin-top: 20px;
   text-align: center;
   width: 25%;
+  min-width: 300px;
   display: inline-block;
   animation-name: fade-in-bottom;
   animation-duration: 1s;
