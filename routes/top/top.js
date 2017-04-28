@@ -24,7 +24,7 @@ router.get('/:id/views', (req, res, next) =>{
 
 router.post('/:id/views', (req, res, next) =>{
    knex.raw(`SELECT * from posts WHERE id = '${req.params.id}'`).then((data) =>{
-     if (req.body.password === data.rows[0].post_pass) {
+     if (req.body.password === data.rows[0].post_pass) {   
       res.cookie("visitor", data.rows[0].id);
       res.redirect(`/top/${req.params.id}/views`)
     }
