@@ -23,7 +23,7 @@
 body {
   margin: 0;
   background-image: url(https://c2.staticflickr.com/2/1627/24177133685_d9a9608968_k.jpg);
-  overflow: hidden;
+  overflow:hidden;
 }
 
 a {
@@ -128,14 +128,19 @@ p {
 }
 
 .foot{
-  clear: both;
   position: relative;
   background: linear-gradient(to bottom right, rgb(18, 27, 43), rgb(32, 52, 86), rgb(61, 89, 140));
   margin-top: 380px;
-  height: 300px;
+  bottom: -50px;
+  height: 450px;
+}
+.bottom{
+  text-align: center;
+  display: flex;
 }
 
 .desc{
+  margin: 0 auto;
   margin-top: 20px;
   text-align: center;
   width: 25%;
@@ -146,7 +151,6 @@ p {
 }
 
 .footbox{
-  text-align: center;
   box-shadow: 0px -20px 20px 6px rgba(0, 0, 0, 0.8);
 }
 
