@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Yo</title>
+    <title><%=data[0].content%></title>
   </head>
   <body>
   <style>
@@ -117,7 +117,7 @@
     <h3>To share copy & paste the url link. Don't forget to share the password</h3>
     <%}%>
 
-    <%if(parseInt(visitor) === data[0].id){%>
+    <%if(parseInt(visitor) === data[0].id && !id){%>
       <h3 style="margin-bottom:5px;">Don't have an account?</h3>
       <a style="margin:0px;"href="/register"><button type="button" name="button" id="edit">register</button></a>
     <%}%>
@@ -136,7 +136,7 @@
       <h2>Password is: <%=data[0].post_pass%></h2>
     <%}%>
 
-    <%if (!id && (!visitor || parseInt(visitor) != data[0].id)){%>
+    <%if (!id && (!visitor || parseInt(visitor) != data[0].id) || (parseInt(id) != data[0].poster_id && parseInt(visitor) != data[0].id)){%>
   <div class="visits">
     <h1 id="inst">Enter password</h1>
     <form method="post">
