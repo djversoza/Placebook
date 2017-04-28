@@ -58,7 +58,7 @@
         border-style: none;
       }
 
-      span{
+      #inptxt{
         color: white;
         font-family: Tahoma, Geneva, sans-serif;
       }
@@ -80,41 +80,41 @@
       <span id="place-address"></span>
     </div>
 
-    <input id="pac-input" class="controls" type="text"
-    placeholder="Enter a location" name="locator">
 
     <div style="text-align: center; border: 3px solid grey; background:linear-gradient(to bottom right, rgb(18, 27, 43), rgb(32, 52, 86)); height:50%;">
 
     <form action="/createpost/<%= data.id %>" method="post">
+      <input id="pac-input" class="controls" type="text"
+      placeholder="Enter a location" name="locator">
 
-      <p><label for="content"><span>Title</span></label>
+      <p><label for="content"><span id="inptxt">Title</span></label>
       <input class="inner" type="text" name="content"><p>
 
 
-      <p><label for="info"><span>Message</span></label>
+      <p><label for="info"><span id="inptxt">Message</span></label>
       <input class="inner" type="text" name="info"></p>
 
-      <p><label for="dates"><span>Select date</span></label></p>
-      <p><span>Month</span>
+      <p><label for="dates"><span id="inptxt">Select date</span></label></p>
+      <p><span id="inptxt">Month</span>
       <select name="date">
         <%for(var i = 1; i < 13; i++) {%>
           <option><%=i%></option>
         <%}%>
       </select>
-      <span>Day</span>
+      <span id="inptxt">Day</span>
       <select name="date">
         <%for(var i = 1; i < 32; i++) {%>
           <option><%=i%></option>
         <%}%>
       </select>
-      <span>Year</span>
+      <span id="inptxt">Year</span>
       <select name="date">
         <%for(var i = 2017; i < 3000; i++) {%>
           <option><%=i%></option>
         <%}%>
       </select></p>
 
-      <p><label for="password"><span>Password</span></label>
+      <p><label for="password"><span id="inptxt">Password</span></label>
       <input class="inner" type="text" name="password"></p>
 
       <p><input id="ringer" class="submitter" type="submit" name="submit" value="Submit"><a href="/top"><button id="ringer" type="button" name="button">Cancel</button></a></p>
