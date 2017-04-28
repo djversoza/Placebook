@@ -39,9 +39,7 @@ router.post('/', function(req, res, next) {
                  } else {
                    res.redirect('/')
                  }
-
                })
-
 });
 
 //Register for Placebook
